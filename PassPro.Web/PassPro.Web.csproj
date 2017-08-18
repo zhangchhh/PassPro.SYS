@@ -1125,12 +1125,16 @@
     <Content Include="static\h-ui\images\verticalTab\tab_bg.png" />
     <Content Include="static\h-ui\js\H-ui.js" />
     <Content Include="static\h-ui\js\H-ui.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Controllers\PassController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1179,6 +1183,9 @@
     <Content Include="lib\webuploader\0.1.5\server\fileupload2.php" />
     <Content Include="lib\webuploader\0.1.5\server\preview.php" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Pass\Index.cshtml" />
+    <Content Include="Views\Note\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\zch.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
