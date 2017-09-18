@@ -43,11 +43,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -103,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="lib\app\app.js" />
     <Content Include="lib\datatables\1.10.0\jquery.dataTables.min.js" />
     <Content Include="lib\DD_belatedPNG_0.0.8a-min.js" />
     <Content Include="lib\echarts\3.4.0\echarts.common.min.js" />
@@ -187,6 +204,93 @@
     <Content Include="lib\lightbox2\2.8.1\js\lightbox-plus-jquery.min.js" />
     <Content Include="lib\lightbox2\2.8.1\js\lightbox.js" />
     <Content Include="lib\lightbox2\2.8.1\js\lightbox.min.js" />
+    <Content Include="lib\login\css\login.css" />
+    <Content Include="lib\login\images\banner_bd.jpg" />
+    <Content Include="lib\login\images\biao_duigouh.jpg" />
+    <Content Include="lib\login\images\biao_X_h.jpg" />
+    <Content Include="lib\login\images\bj_zhuce.jpg" />
+    <Content Include="lib\login\images\btn_shangchuan.jpg" />
+    <Content Include="lib\login\images\car.png" />
+    <Content Include="lib\login\images\center-menu-icon.png" />
+    <Content Include="lib\login\images\corner.jpg" />
+    <Content Include="lib\login\images\delete.png" />
+    <Content Include="lib\login\images\delete_f.png" />
+    <Content Include="lib\login\images\describeImg.jpg" />
+    <Content Include="lib\login\images\diy_03.jpg" />
+    <Content Include="lib\login\images\diy_05.jpg" />
+    <Content Include="lib\login\images\diy_07.jpg" />
+    <Content Include="lib\login\images\diy_09.jpg" />
+    <Content Include="lib\login\images\diy_11.jpg" />
+    <Content Include="lib\login\images\diy_11f.jpg" />
+    <Content Include="lib\login\images\diy_13.jpg" />
+    <Content Include="lib\login\images\diy_15.jpg" />
+    <Content Include="lib\login\images\diy_17.jpg" />
+    <Content Include="lib\login\images\diy_28.jpg" />
+    <Content Include="lib\login\images\diy_35.jpg" />
+    <Content Include="lib\login\images\diy_39.jpg" />
+    <Content Include="lib\login\images\diy_41.jpg" />
+    <Content Include="lib\login\images\diy_44.jpg" />
+    <Content Include="lib\login\images\diy_48.jpg" />
+    <Content Include="lib\login\images\diy_50.jpg" />
+    <Content Include="lib\login\images\diy_55.jpg" />
+    <Content Include="lib\login\images\diy_57.jpg" />
+    <Content Include="lib\login\images\diy_59.jpg" />
+    <Content Include="lib\login\images\diy_65.jpg" />
+    <Content Include="lib\login\images\diy_67.jpg" />
+    <Content Include="lib\login\images\diy_71.jpg" />
+    <Content Include="lib\login\images\diy_73.jpg" />
+    <Content Include="lib\login\images\diy_biaochi_bg.jpg" />
+    <Content Include="lib\login\images\diy_biao_tx.png" />
+    <Content Include="lib\login\images\diy_tx_03.jpg" />
+    <Content Include="lib\login\images\diy_tx_05.jpg" />
+    <Content Include="lib\login\images\diy_tx_07.jpg" />
+    <Content Include="lib\login\images\diy_tx_09.jpg" />
+    <Content Include="lib\login\images\diy_tx_11.jpg" />
+    <Content Include="lib\login\images\diy_tx_13.jpg" />
+    <Content Include="lib\login\images\duigou_bai.png" />
+    <Content Include="lib\login\images\edit-delete.png" />
+    <Content Include="lib\login\images\emptyCar.jpg" />
+    <Content Include="lib\login\images\headImg-01.png" />
+    <Content Include="lib\login\images\headImg-02.png" />
+    <Content Include="lib\login\images\headImg-03.png" />
+    <Content Include="lib\login\images\headImg-1 - 副本.jpg" />
+    <Content Include="lib\login\images\headImg-1.jpg" />
+    <Content Include="lib\login\images\headImg-btn.png" />
+    <Content Include="lib\login\images\headImg.jpg" />
+    <Content Include="lib\login\images\headImg.png" />
+    <Content Include="lib\login\images\img-01.jpg" />
+    <Content Include="lib\login\images\jiesuan_dg.png" />
+    <Content Include="lib\login\images\line_heng.jpg" />
+    <Content Include="lib\login\images\line_shu.jpg" />
+    <Content Include="lib\login\images\list-icon.jpg" />
+    <Content Include="lib\login\images\logo.jpg" />
+    <Content Include="lib\login\images\logo.png" />
+    <Content Include="lib\login\images\menu.png" />
+    <Content Include="lib\login\images\new.png" />
+    <Content Include="lib\login\images\online.jpg" />
+    <Content Include="lib\login\images\part-05.jpg" />
+    <Content Include="lib\login\images\qq.jpg" />
+    <Content Include="lib\login\images\searchSub.png" />
+    <Content Include="lib\login\images\shoppingImg-01.jpg" />
+    <Content Include="lib\login\images\sj.png" />
+    <Content Include="lib\login\images\smallMirror.png" />
+    <Content Include="lib\login\images\tubiao_more.png" />
+    <Content Include="lib\login\images\vip.png" />
+    <Content Include="lib\login\images\wangjimm_hui.png" />
+    <Content Include="lib\login\images\wangjimm_lan.png" />
+    <Content Include="lib\login\images\weixin.jpg" />
+    <Content Include="lib\login\images\wrz.png" />
+    <Content Include="lib\login\images\xg.png" />
+    <Content Include="lib\login\images\xg_f.png" />
+    <Content Include="lib\login\images\zc_03.jpg" />
+    <Content Include="lib\login\images\zc_06.jpg" />
+    <Content Include="lib\login\images\zc_10.jpg" />
+    <Content Include="lib\login\images\zc_12.jpg" />
+    <Content Include="lib\login\images\zc_15.jpg" />
+    <Content Include="lib\login\images\zc_16.jpg" />
+    <Content Include="lib\login\images\zc_19.jpg" />
+    <Content Include="lib\login\images\zc_22.jpg" />
+    <Content Include="lib\login\images\zc_25.jpg" />
     <Content Include="lib\My97DatePicker\4.8\calendar.js" />
     <Content Include="lib\My97DatePicker\4.8\lang\en.js" />
     <Content Include="lib\My97DatePicker\4.8\lang\zh-cn.js" />
@@ -1132,6 +1236,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\PassController.cs" />
@@ -1185,7 +1291,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Pass\Index.cshtml" />
     <Content Include="Views\Note\Index.cshtml" />
+    <Content Include="lib\login\images\Thumbs.db" />
     <None Include="Properties\PublishProfiles\zch.pubxml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\ChildPageMaster.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1196,6 +1306,21 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PassPro.Business\PassPro.Business.csproj">
+      <Project>{f85ac60f-4c89-45da-9103-67f423548b2b}</Project>
+      <Name>PassPro.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PassPro.Common\PassPro.Common.csproj">
+      <Project>{812a83b4-11a2-4aef-96b1-267f838373eb}</Project>
+      <Name>PassPro.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PassPro.Entity.MySQL\PassPro.Entity.MySQL.csproj">
+      <Project>{B6879FB7-BD7F-4DF8-9EA1-6129B2FF8F66}</Project>
+      <Name>PassPro.Entity.MySQL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

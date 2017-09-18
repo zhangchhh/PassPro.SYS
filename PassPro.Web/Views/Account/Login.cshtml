@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>登录-PassPro</title>
+    <link href="~/lib/login/css/login.css" rel="stylesheet" />
+    <script src="~/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/lib/app/app.js"></script>
+    <script src="~/lib/layer/2.4/layer.js"></script>
+</head>
+<body class="login_bj">
+    <div class="zhuce_body">
+        <div class="zhuce_kong login_kuang">
+            <div class="zc">
+                <div class="bj_bai">
+                    <h3>PassPro 登录</h3>
+                    <form action="" method="get">
+                        <input id="u_name" type="text" class="kuang_txt" placeholder="邮箱/手机号">
+                        <input id="u_pwd" type="password" class="kuang_txt" placeholder="密码">
+                        <div>
+                            <a href="#">忘记密码？</a><input name="" type="checkbox" value=""><span>记住我</span>
+                        </div>
+                        <input name="登录" type="button" class="btn_zhuce" value="登录" onclick="app.login()">
+                    </form>
+                </div>
+                <div class="bj_right">
+                    <p>使用以下账号直接登录</p>
+                    <a href="#" class="zhuce_qq">QQ注册</a>
+                    <a href="#" class="zhuce_wb">微博注册</a>
+                    <a href="#" class="zhuce_wx">微信注册</a>
+                    <p>还没账号？<a href="../Account/Register">立即注册</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
