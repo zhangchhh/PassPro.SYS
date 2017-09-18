@@ -10,10 +10,10 @@ namespace PassPro.Web.Controllers
 {
     public class AccountController : Controller
     {
-        AccountLogic _logic;
+        BllAccount _logic;
         public AccountController()
         {
-            _logic = new AccountLogic();
+            _logic = new BllAccount();
         }
         // GET: Account
         public ActionResult Login()

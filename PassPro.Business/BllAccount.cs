@@ -1,5 +1,6 @@
 ﻿using PassPro.Common;
-using PassPro.Entity.MySQL;
+using PassPro.DataAccess;
+using PassPro.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +9,21 @@ using System.Threading.Tasks;
 
 namespace PassPro.Business
 {
-    public class AccountLogic
+    public class BllAccount
     {
-        PassProEntities _dbContext;
-        public AccountLogic()
-        {
-            _dbContext = new PassProEntities();
-        }
-        
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="username">用户名</param>
+        /// <param name="pwd">密码</param>
+        /// <param name="status">状态消息</param>
+        /// <returns>用户</returns>
         public user Login(string username, string pwd,out OperateStatus status)
         {
             status = new OperateStatus();
+            var userdal = new DalUser();
             //通过账号（邮箱/手机号）获取用户
-            var userdata = _dbContext.Set<user>().SingleOrDefault(f => f.email == username || f.phone == username);
+            var userdata = userdal.GetUserByUserName(username);
             if (userdata == null)
             {
                 status.Success = false;

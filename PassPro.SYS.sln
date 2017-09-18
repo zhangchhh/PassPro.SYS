@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassPro.Entity.MySQL", "PassPro.Entity.MySQL\PassPro.Entity.MySQL.csproj", "{B6879FB7-BD7F-4DF8-9EA1-6129B2FF8F66}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassPro.Common", "PassPro.Common\PassPro.Common.csproj", "{812A83B4-11A2-4AEF-96B1-267F838373EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassPro.Business", "PassPro.Business\PassPro.Business.csproj", "{F85AC60F-4C89-45DA-9103-67F423548B2B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassPro.Web", "PassPro.Web\PassPro.Web.csproj", "{E0F1832F-789A-4BF9-B33F-79821D3F6EBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassPro.DataAccess", "PassPro.DataAccess\PassPro.DataAccess.csproj", "{8BFDE174-5C35-44A3-822C-4E5D8D3E7A60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassPro.Entities", "PassPro.Entity\PassPro.Entities.csproj", "{60000F6E-C503-4FFC-817C-BC5447D10050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassPro.Test", "PassPro.Test\PassPro.Test.csproj", "{27491C20-859E-4C73-9C5D-9AB96DF5A651}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B6879FB7-BD7F-4DF8-9EA1-6129B2FF8F66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6879FB7-BD7F-4DF8-9EA1-6129B2FF8F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6879FB7-BD7F-4DF8-9EA1-6129B2FF8F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6879FB7-BD7F-4DF8-9EA1-6129B2FF8F66}.Release|Any CPU.Build.0 = Release|Any CPU
 		{812A83B4-11A2-4AEF-96B1-267F838373EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{812A83B4-11A2-4AEF-96B1-267F838373EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{812A83B4-11A2-4AEF-96B1-267F838373EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +33,18 @@ Global
 		{E0F1832F-789A-4BF9-B33F-79821D3F6EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0F1832F-789A-4BF9-B33F-79821D3F6EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0F1832F-789A-4BF9-B33F-79821D3F6EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BFDE174-5C35-44A3-822C-4E5D8D3E7A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BFDE174-5C35-44A3-822C-4E5D8D3E7A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BFDE174-5C35-44A3-822C-4E5D8D3E7A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BFDE174-5C35-44A3-822C-4E5D8D3E7A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60000F6E-C503-4FFC-817C-BC5447D10050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60000F6E-C503-4FFC-817C-BC5447D10050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60000F6E-C503-4FFC-817C-BC5447D10050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60000F6E-C503-4FFC-817C-BC5447D10050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27491C20-859E-4C73-9C5D-9AB96DF5A651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27491C20-859E-4C73-9C5D-9AB96DF5A651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27491C20-859E-4C73-9C5D-9AB96DF5A651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27491C20-859E-4C73-9C5D-9AB96DF5A651}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
