@@ -15,7 +15,14 @@ namespace PassPro.Business
         {
             _dbContext = new PassProEntities();
         }
-        
+
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="username">用户名</param>
+        /// <param name="pwd">密码</param>
+        /// <param name="status">提示</param>
+        /// <returns></returns>
         public user Login(string username, string pwd,out OperateStatus status)
         {
             status = new OperateStatus();
