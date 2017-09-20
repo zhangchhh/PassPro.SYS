@@ -5,15 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PassPro.Entities;
 
 namespace PassPro.Web.Controllers
 {
     public class AccountController : Controller
     {
         BllAccount _logic;
+        ValidateCode _validate;
         public AccountController()
         {
             _logic = new BllAccount();
+            _validate = new ValidateCode();
         }
         // GET: Account
         public ActionResult Login()
@@ -25,11 +28,10 @@ namespace PassPro.Web.Controllers
         {
             return View();
         }
-
         public JsonResult LoginForUser(string username, string pwd)
         {
             OperateStatus status;
-            var userdata=_logic.Login(username, pwd, out status);
+            var userdata = _logic.Login(username, pwd, out status);
             if (userdata != null)
             {
                 //登录用户写入session
@@ -71,10 +73,40 @@ namespace PassPro.Web.Controllers
             }
             return Json(status);
         }
+        /// <summary>
+        /// 获取验证码
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult GetValidateCode()
+        {
+            string code = _validate.CreateValidateCode(4);
+            Session["ValidateCode"] = code;
+            byte[] bytes = _validate.CreateValidateGraphic(code);
+            return File(bytes, @"image/jpeg");
+        }
+
+        public JsonResult ResisterUser(user user)
+        {
+            OperateStatus status = new OperateStatus();
+            //获取session验证码
+            var code = Session["ValidateCode"].ToString();
+            //比较用户输入验证码是否和session验证码一致
+            if (code != user.ValidateCode)
+            {
+                status.Message = "验证码不一致";
+                status.Success = false;
+            }
+            else
+            {
+                _logic.Registe(user, out status);
+            }
+            //如果不一致，需要提示，一致则调用BLL层方法
+            return Json(status);
+        }
 
         public RedirectToRouteResult LoginOut()
         {
-            
+
             if (HttpContext.Session["user"] != null)
             {
                 HttpContext.Session.Remove("user");

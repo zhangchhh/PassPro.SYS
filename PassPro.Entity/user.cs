@@ -173,4 +173,12 @@ namespace PassPro.Entities
         }
         #endregion
 	}
+
+    public partial class user
+    {
+        /// <summary>
+        /// 验证码
+        /// </summary>
+        public string ValidateCode { get; set; }
+    }
 }

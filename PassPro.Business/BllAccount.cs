@@ -11,6 +11,13 @@ namespace PassPro.Business
 {
     public class BllAccount
     {
+        DalUser userdal;
+
+        public BllAccount()
+        {
+            userdal=new DalUser();
+        }
+
         /// <summary>
         /// 登录
         /// </summary>
@@ -21,7 +28,7 @@ namespace PassPro.Business
         public user Login(string username, string pwd,out OperateStatus status)
         {
             status = new OperateStatus();
-            var userdal = new DalUser();
+            userdal = new DalUser();
             //通过账号（邮箱/手机号）获取用户
             var userdata = userdal.GetUserByUserName(username);
             if (userdata == null)
@@ -42,6 +49,25 @@ namespace PassPro.Business
             status.Success = true;
             status.Message = "登录成功";
             return userdata;
+        }
+
+        /// <summary>
+        /// 注册用户
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="status"></param>
+        public void Registe(user user,out  OperateStatus status)
+        {
+            //获取系统密钥
+            var sysLicense = UserLicense.ApplicationLicense();
+            //加密用户密码
+            var pass = AESHelper.Encrypt(user.password, sysLicense);
+            //自动产生该用户其他模块许可证
+            var userLicense = GenerateId.GenerateStr();
+            user.password = pass;
+            user.license = userLicense;
+            //调用数据访问层
+            status=userdal.CreateUser(user);
         }
     }
 }

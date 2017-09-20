@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PassPro.DataAccess;
 using PassPro.Business;
-using PassPro.Common;
 
 namespace PassPro.Test
 {
@@ -12,9 +11,9 @@ namespace PassPro.Test
         [TestMethod]
         public void TestMethod1()
         {
-            BllAccount bll = new BllAccount();
-            OperateStatus status;
-            var result=bll.Login("admin", "123456", out status);
+            //BllAccount bll = new BllAccount();
+            //OperateStatus status;
+            //var result=bll.Login("admin", "123456", out status);
         }
     }
 }

@@ -12,6 +12,8 @@
     <title>注册-PassPro</title>
     <link href="~/lib/login/css/login.css" rel="stylesheet" />
     <script src="~/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/lib/app/app.js"></script>
+    <script src="~/lib/layer/2.4/layer.js"></script>
 </head>
 <body class="login_bj">
     <div class="zhuce_body">
@@ -19,21 +21,19 @@
             <div class="zc">
                 <div class="bj_bai">
                     <h3>欢迎注册</h3>
-                    <form action="" method="get">
-                        <input name="" type="text" class="kuang_txt phone" placeholder="手机号">
-                        <input name="" type="text" class="kuang_txt email" placeholder="邮箱">
-                        <input name="" type="text" class="kuang_txt possword" placeholder="密码">
-                        <input name="" type="text" class="kuang_txt possword" placeholder="确认密码">
-                        <input name="" type="text" class="kuang_txt yanzm" placeholder="验证码">
-                        <div>
-                            <div class="hui_kuang"><img src="images/zc_22.jpg" width="92" height="31"></div>
-                            <div class="shuaxin"><a href="#"><img src="images/zc_25.jpg" width="13" height="14"></a></div>
+                    <form action="" method="get" id="data-form">
+                        <input name="phone" id="_phone"type="text" class="kuang_txt phone" placeholder="手机号" required="required">
+                        <input name="email" type="text" id="_email" class="kuang_txt email" placeholder="邮箱"required="required">
+                        <input name="password" id="_password" type="password" class="kuang_txt possword" placeholder="密码"required="required">
+                        <input name="password" id="_passwords"type="password" class="kuang_txt possword" placeholder="确认密码"required="required">
+                        <input name="ValidateCode" type="text" class="kuang_txt yanzm" placeholder="验证码" id="_validateCode">
+                        <div style="height: 25px; line-height: 25px; padding-top: 5px;">
+                            <img id="valiCode" style="cursor: pointer;" src="../Account/GetValidateCode" alt="验证码" />
                         </div>
                         <div>
-                            <input name="" type="checkbox" value=""><span>已阅读并同意<a href="#" target="_blank"><span class="lan">《XXXXX使用协议》</span></a></span>
+                            <input name="" type="checkbox" value="" checked="checked"><span>已阅读并同意<a href="#" target="_blank"><span class="lan">《XXXXX使用协议》</span></a></span>
                         </div>
-                        <input name="注册" type="button" class="btn_zhuce" value="注册">
-
+                        <input name="注册" type="button" class="btn_zhuce" value="注册" onclick="app.register()">
                     </form>
                 </div>
                 <div class="bj_right">
@@ -47,5 +47,11 @@
         </div>
     </div>
 </body>
-
+<script type="text/javascript">
+    $(function() {
+        $("#valiCode").bind("click", function() {
+            this.src = "../Account/GetValidateCode?time=" + (new Date()).getTime();
+         });
+    });
+</script>
 </html>
