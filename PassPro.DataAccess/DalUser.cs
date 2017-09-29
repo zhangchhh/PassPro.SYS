@@ -30,7 +30,7 @@ namespace PassPro.DataAccess
             user.id = Guid.NewGuid().ToString();
             try
             {
-                DB.Context.Insert<user>();
+                DB.Context.Insert<user>(user);
                 status.Success = true;
                 status.Message = "注册成功";
             }
